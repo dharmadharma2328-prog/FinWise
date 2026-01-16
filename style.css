@@ -1,0 +1,187 @@
+/* ================================
+   FinWise – Clean & Editable Dark CSS
+================================== */
+
+:root {
+  /* 🎨 MAIN COLORS (change here easily) */
+  --bg-main: #0f1724;
+  --bg-gradient-1: #0f1724;
+  --bg-gradient-2: #172a36;
+  --bg-gradient-3: #1c3f4f;
+
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --input-bg: rgba(255, 255, 255, 0.12);
+
+  --text-main: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.65);
+
+  --accent-1: #29b4cd;
+  --accent-2: #3b82f6;
+
+  --radius: 14px;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+/* Background */
+.gradient-bg {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    var(--bg-gradient-1),
+    var(--bg-gradient-2),
+    var(--bg-gradient-3)
+  );
+  padding-bottom: 3rem;
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+  padding: 1rem;
+}
+
+.navbar-brand {
+  color: var(--text-main) !important;
+}
+
+/* Layout */
+.container {
+  max-width: 900px;
+  margin-top: 1.5rem;
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  padding: 1.5rem;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Headings & Labels */
+h1, h2, h3, h4, h5, h6, label {
+  color: var(--text-main);
+}
+
+small, .text-muted {
+  color: var(--text-muted);
+}
+
+/* Buttons */
+button, .btn {
+  border-radius: 8px !important;
+  border: none;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.btn-main {
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  color: #ffffff;
+}
+
+.btn-main:hover {
+  opacity: 0.9;
+}
+
+.btn-add {
+  background: linear-gradient(90deg, #10b981, #06b6d4);
+  color: #ffffff;
+}
+
+.btn-danger {
+  font-weight: 700;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* Inputs */
+input.form-control,
+select.form-control {
+  background: var(--input-bg);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--text-main);
+  padding: 10px;
+}
+
+input::placeholder {
+  color: var(--text-muted);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent-2);
+  box-shadow: 0 0 6px rgba(59,130,246,0.45);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Expense Rows */
+.expense-row {
+  background: rgba(255,255,255,0.05);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Summary Cards */
+.income-card  { border-top: 4px solid #22c55e; }
+.expense-card { border-top: 4px solid #ef4444; }
+.savings-card { border-top: 4px solid #facc15; }
+
+.summary-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* Chart */
+#expChart {
+  max-height: 340px;
+  margin-top: 1rem;
+}
+
+/* Goal & Retirement */
+#goal-summary,
+#retire-summary {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Footer */
+footer {
+  margin-top: 2.5rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container { padding: 0 1rem; }
+  .card { padding: 1.2rem; }
+  .summary-value { font-size: 1.2rem; }
+}
