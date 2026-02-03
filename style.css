@@ -1,97 +1,100 @@
 /* ================================
-   FinWise – Clean & Editable Dark CSS
+   StudyScan AI – Dark Product UI
 ================================== */
 
 :root {
-  /* 🎨 MAIN COLORS (change here easily) */
-  --bg-main: #0f1724;
-  --bg-gradient-1: #0f1724;
-  --bg-gradient-2: #172a36;
-  --bg-gradient-3: #1c3f4f;
+  --bg-main: #0b1220;
+  --bg-gradient-1: #0b1220;
+  --bg-gradient-2: #121b2f;
+  --bg-gradient-3: #18243d;
 
   --card-bg: rgba(255, 255, 255, 0.08);
   --input-bg: rgba(255, 255, 255, 0.12);
 
   --text-main: #ffffff;
-  --text-muted: rgba(255, 255, 255, 0.65);
+  --text-muted: rgba(255, 255, 255, 0.68);
 
-  --accent-1: #29b4cd;
-  --accent-2: #3b82f6;
+  --accent-1: #7c3aed;
+  --accent-2: #22d3ee;
+  --accent-3: #22c55e;
 
-  --radius: 14px;
+  --radius: 16px;
 }
 
-/* Reset */
 * {
   box-sizing: border-box;
 }
 
-/* Base */
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", "Inter", sans-serif;
   color: var(--text-main);
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
-/* Background */
 .gradient-bg {
   min-height: 100vh;
-  background: linear-gradient(
-    135deg,
-    var(--bg-gradient-1),
-    var(--bg-gradient-2),
-    var(--bg-gradient-3)
-  );
+  background: linear-gradient(135deg, var(--bg-gradient-1), var(--bg-gradient-2), var(--bg-gradient-3));
   padding-bottom: 3rem;
 }
 
-/* Navbar */
 .navbar {
   background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   padding: 1rem;
 }
 
 .navbar-brand {
   color: var(--text-main) !important;
+  font-weight: 600;
 }
 
-/* Layout */
 .container {
-  max-width: 900px;
+  max-width: 1100px;
   margin-top: 1.5rem;
 }
 
-/* Cards */
 .card {
   background: var(--card-bg);
   border-radius: var(--radius);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
   padding: 1.5rem;
   animation: fadeIn 0.4s ease;
 }
 
-/* Animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+.hero-section {
+  padding: 4rem 0 2rem;
 }
 
-/* Headings & Labels */
+.hero-card {
+  min-height: 320px;
+}
+
+.section-spacing {
+  padding: 2.5rem 0 0;
+}
+
+.section-title {
+  margin-bottom: 1.5rem;
+}
+
+.section-title h2 {
+  font-weight: 700;
+}
+
 h1, h2, h3, h4, h5, h6, label {
   color: var(--text-main);
 }
 
 small, .text-muted {
-  color: var(--text-muted);
+  color: var(--text-muted) !important;
 }
 
-/* Buttons */
 button, .btn {
-  border-radius: 8px !important;
+  border-radius: 10px !important;
   border: none;
   font-weight: 600;
   transition: 0.2s ease;
@@ -103,7 +106,7 @@ button, .btn {
 }
 
 .btn-main:hover {
-  opacity: 0.9;
+  opacity: 0.92;
 }
 
 .btn-add {
@@ -111,77 +114,158 @@ button, .btn {
   color: #ffffff;
 }
 
-.btn-danger {
-  font-weight: 700;
-}
-
 button:active {
-  transform: scale(0.96);
+  transform: scale(0.97);
 }
 
-/* Inputs */
 input.form-control,
-select.form-control {
+select.form-control,
+textarea.form-control {
   background: var(--input-bg);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--text-main);
-  padding: 10px;
+  padding: 10px 12px;
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
   color: var(--text-muted);
 }
 
 input:focus,
-select:focus {
+select:focus,
+textarea:focus {
   outline: none;
   border-color: var(--accent-2);
-  box-shadow: 0 0 6px rgba(59,130,246,0.45);
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.35);
   background: rgba(255, 255, 255, 0.18);
 }
 
-/* Expense Rows */
-.expense-row {
-  background: rgba(255,255,255,0.05);
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  border: 1px solid rgba(255,255,255,0.12);
+.upload-zone {
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+  padding: 1.5rem;
+  border-radius: 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: border 0.2s ease;
 }
 
-/* Summary Cards */
-.income-card  { border-top: 4px solid #22c55e; }
-.expense-card { border-top: 4px solid #ef4444; }
-.savings-card { border-top: 4px solid #facc15; }
+.upload-zone:hover {
+  border-color: var(--accent-2);
+}
 
-.summary-value {
-  font-size: 1.4rem;
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.pill,
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-pill {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+}
+
+.status-pill.online {
+  background: rgba(34, 197, 94, 0.2);
+  color: #86efac;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
+}
+
+.timeline {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.timeline li {
+  margin-bottom: 0.75rem;
+  color: var(--text-muted);
+}
+
+.callout {
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(124, 58, 237, 0.12);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+.question-list {
+  max-height: 380px;
+  overflow-y: auto;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.question-card,
+.answer-card {
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.answer-card h6 {
+  font-weight: 600;
+}
+
+.answer-actions button {
+  border-radius: 8px !important;
+  font-size: 0.75rem;
+}
+
+.summary-card h2 {
+  font-size: 2rem;
   font-weight: 700;
 }
 
-/* Chart */
-#expChart {
-  max-height: 340px;
-  margin-top: 1rem;
+.tool-card {
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
 }
 
-/* Goal & Retirement */
-#goal-summary,
-#retire-summary {
-  font-size: 0.95rem;
-  line-height: 1.5;
+.progress {
+  background: rgba(255, 255, 255, 0.08);
+  height: 10px;
 }
 
-/* Footer */
+.progress-bar {
+  background: linear-gradient(90deg, var(--accent-2), var(--accent-3));
+}
+
 footer {
   margin-top: 2.5rem;
   text-align: center;
   color: var(--text-muted);
 }
 
-/* Responsive */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @media (max-width: 768px) {
   .container { padding: 0 1rem; }
   .card { padding: 1.2rem; }
-  .summary-value { font-size: 1.2rem; }
+  .hero-section { padding-top: 2rem; }
 }
