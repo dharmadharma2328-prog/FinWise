@@ -2,13 +2,178 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>FinWise Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyScan AI | Smart Study Companion</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="gradient-bg">
+<body class="gradient-bg" data-page="landing">
+  <nav class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container d-flex justify-content-between align-items-center">
+      <span class="navbar-brand mb-0 h1">📚 StudyScan AI</span>
+      <div class="d-flex gap-2">
+        <a class="btn btn-outline-light btn-sm" href="inputs.html">Launch Studio</a>
+        <a class="btn btn-main btn-sm" href="dashboard.html">View Workspace</a>
+      </div>
+    </div>
+  </nav>
 
-  <!-- Paste FULL dashboard.html content here -->
+  <header class="hero-section">
+    <div class="container text-light">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <span class="badge bg-info text-dark text-uppercase mb-3">Production-ready MVP</span>
+          <h1 class="display-5 fw-bold">Scan. Understand. Answer. <br>StudyScan AI powers exam-ready learning.</h1>
+          <p class="lead text-muted">Upload notes, question banks, PDFs, or paste YouTube links. StudyScan extracts topics, detects questions, and generates marks-based answers with citations — even offline.</p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a class="btn btn-main btn-lg" href="inputs.html">Start a Scan</a>
+            <a class="btn btn-outline-light btn-lg" href="dashboard.html">Explore Workspace</a>
+          </div>
+          <div class="d-flex gap-3 mt-4 flex-wrap">
+            <span class="chip">OCR + Document parsing</span>
+            <span class="chip">RAG with citations</span>
+            <span class="chip">Offline-first PWA</span>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card glass hero-card">
+            <h4 class="fw-semibold">What you can do</h4>
+            <ul class="list-unstyled mt-3 text-muted">
+              <li>✅ Auto-detect questions (MCQ/2/5/10/15 marks)</li>
+              <li>✅ Generate structured answers and diagrams</li>
+              <li>✅ Create flashcards, quizzes, and revision sheets</li>
+              <li>✅ Sync highlights and progress across devices</li>
+            </ul>
+            <div class="info-grid mt-4">
+              <div>
+                <h6 class="text-uppercase text-muted">Users</h6>
+                <p>Class 1 → Degree</p>
+              </div>
+              <div>
+                <h6 class="text-uppercase text-muted">Modes</h6>
+                <p>Strict / Hybrid</p>
+              </div>
+              <div>
+                <h6 class="text-uppercase text-muted">Exports</h6>
+                <p>PDF / DOCX</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <script src="script.js"></script>
+  <section class="section-spacing">
+    <div class="container">
+      <div class="section-title">
+        <h2>Core Workflows</h2>
+        <p class="text-muted">StudyScan AI is engineered for learning at scale, with guardrails for accuracy.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card glass h-100">
+            <h5>Upload & Scan</h5>
+            <p class="text-muted">Drag & drop files, paste links, preview OCR text, and auto-group into units.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card glass h-100">
+            <h5>Marks-based Answers</h5>
+            <p class="text-muted">Choose marks, tone, and diagram inclusion. Answers follow exam templates.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card glass h-100">
+            <h5>YouTube Learning</h5>
+            <p class="text-muted">Parse transcripts, extract timestamps, and auto-generate summaries & quizzes.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card glass h-100">
+            <h5>Offline Revision</h5>
+            <p class="text-muted">Access cached OCR, notes, flashcards, and revision sheets offline.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-spacing">
+    <div class="container">
+      <div class="section-title">
+        <h2>AI Architecture Snapshot</h2>
+        <p class="text-muted">Built with a full ingestion + RAG pipeline and marks-aware answer templates.</p>
+      </div>
+      <div class="card glass">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <ul class="timeline">
+              <li><strong>Ingestion:</strong> Upload → OCR + parsing → cleaned text with page metadata.</li>
+              <li><strong>Chunking:</strong> Split by sections → store embeddings in vector DB.</li>
+              <li><strong>Retrieval:</strong> Question → retrieve top relevant chunks with citations.</li>
+              <li><strong>Generation:</strong> Apply marks-based templates with confidence scoring.</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <div class="callout">
+              <h6 class="text-uppercase">Safety guardrails</h6>
+              <p class="mb-2">Strict mode answers only from uploads. Hybrid mode adds general context, clearly labeled.</p>
+              <p class="mb-0">If content is missing, StudyScan asks for clearer pages instead of guessing.</p>
+            </div>
+            <div class="callout mt-3">
+              <h6 class="text-uppercase">Offline data policy</h6>
+              <p class="mb-0">Encrypted local cache, auto-delete on logout, offline search with extractive summaries only.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-spacing">
+    <div class="container">
+      <div class="section-title">
+        <h2>Plans</h2>
+        <p class="text-muted">Monetize with upgrade tiers for faster OCR and unlimited answers.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card glass h-100">
+            <h4>Free</h4>
+            <p class="text-muted">10 uploads · 20 answers/day · basic OCR</p>
+            <ul class="list-unstyled small text-muted">
+              <li>✔️ Offline notes + flashcards</li>
+              <li>✔️ Limited quiz builder</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card glass h-100">
+            <h4>Pro</h4>
+            <p class="text-muted">Unlimited answers · fast OCR · DOCX/PDF exports</p>
+            <ul class="list-unstyled small text-muted">
+              <li>✔️ Batch answer generation</li>
+              <li>✔️ YouTube transcripts</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card glass h-100">
+            <h4>College</h4>
+            <p class="text-muted">Teacher sharing · analytics · classroom management</p>
+            <ul class="list-unstyled small text-muted">
+              <li>✔️ Course codes</li>
+              <li>✔️ Cohort analytics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center text-secondary mt-5 mb-4">
+    © 2025 StudyScan AI · Built for modern learners
+  </footer>
 </body>
 </html>
